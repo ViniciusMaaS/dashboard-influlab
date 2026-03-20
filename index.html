@@ -185,37 +185,33 @@ body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:15px
       <span id="fcount" style="font-size:12px;color:var(--t3);align-self:center;margin-left:auto;"></span>
     </div>
     <div id="kgrid" class="grid gap-4 mb-5 kgrid-cols"></div>
-    <div class="grid gap-5 mb-4 rg items-start" style="grid-template-columns:minmax(0,1.38fr) minmax(0,1fr);">
-      <div class="min-w-0">
-        <div class="card ch" style="padding:24px 28px;">
+    <div class="grid mb-5 rg items-start" style="grid-template-columns:minmax(0,1.28fr) minmax(340px,.92fr);gap:0;">
+      <div class="min-w-0 self-start">
+        <div class="card ch" style="padding:20px 24px;border-radius:var(--r) 0 0 var(--r);border-right:none;">
           <p class="st">Ranking de Vendedores</p>
           <div id="ranking" style="padding-top:4px;"></div>
         </div>
       </div>
 
-      <div class="flex flex-col gap-4 min-w-0">
-        <div class="card ch">
+      <div class="flex flex-col min-w-0">
+        <div class="card ch" style="border-radius:0 var(--r) 0 0;border-bottom:none;">
           <p class="st">Receita por plataforma</p>
-          <div class="cv-wrap" style="position:relative;height:190px;"><canvas id="cplat"></canvas></div>
+          <div class="cv-wrap" style="position:relative;height:180px;"><canvas id="cplat"></canvas></div>
           <div id="pleg" class="mt-3"></div>
         </div>
 
-        <div class="card ch">
+        <div class="card ch" style="border-radius:0;border-bottom:none;">
           <p class="st">Vendas por hora</p>
-          <div class="cv-wrap" style="position:relative;height:210px;"><canvas id="chora"></canvas></div>
+          <div class="cv-wrap" style="position:relative;height:190px;"><canvas id="chora"></canvas></div>
         </div>
 
-        <div class="card ch flex flex-col min-h-[236px]">
+        <div class="card ch flex flex-col min-h-[200px]" style="border-radius:0 0 var(--r) 0;">
           <p class="st">Vendas por produto</p>
-          <div class="flex-1 min-h-[180px] cv-wrap" style="position:relative;"><canvas id="cprod"></canvas></div>
+          <div class="flex-1 min-h-[160px] cv-wrap" style="position:relative;"><canvas id="cprod"></canvas></div>
         </div>
       </div>
     </div>
 
-    <div class="card ch mb-5 w-full">
-      <p class="st">Faturamento por Vendedor</p>
-      <div class="cv-fat" style="position:relative;height:320px;"><canvas id="cvend"></canvas></div>
-    </div>
     <div class="card">
       <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
         <p class="st" style="margin-bottom:0;">Registro de Operações</p>
@@ -539,7 +535,7 @@ var PCOLS = { Instagram:'#e1306c', TikTok:'#69c9d0', WhatsApp:'#25d366', Kiwify:
 
 function renderCharts(d) {
   var v = d.filter(function(r){ return r.status !== 'cancelado'; });
-  makeBarVendedor(v); makeDonutPlat(v); makeLineHora(v); makeBarProduto(v);
+  makeDonutPlat(v); makeLineHora(v); makeBarProduto(v);
 }
 
 function destroyMake(canvasId, type, data, opts, key) {
