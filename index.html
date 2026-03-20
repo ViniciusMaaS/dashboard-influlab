@@ -185,11 +185,11 @@ body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:15px
       <span id="fcount" style="font-size:12px;color:var(--t3);align-self:center;margin-left:auto;"></span>
     </div>
     <div id="kgrid" class="grid gap-4 mb-5 kgrid-cols"></div>
-    <div class="grid gap-5 mb-4 rg items-stretch" style="grid-template-columns:minmax(0,1.38fr) minmax(0,1fr);">
-      <div class="flex flex-col min-w-0">
-        <div class="card ch h-full flex flex-col" style="padding:24px 28px;">
+    <div class="grid gap-5 mb-4 rg items-start" style="grid-template-columns:minmax(0,1.38fr) minmax(0,1fr);">
+      <div class="min-w-0">
+        <div class="card ch" style="padding:24px 28px;">
           <p class="st">Ranking de Vendedores</p>
-          <div id="ranking" class="flex-1" style="padding-top:4px;"></div>
+          <div id="ranking" style="padding-top:4px;"></div>
         </div>
       </div>
 
@@ -205,7 +205,7 @@ body{background:var(--bg);color:var(--t1);font-family:var(--sans);font-size:15px
           <div class="cv-wrap" style="position:relative;height:210px;"><canvas id="chora"></canvas></div>
         </div>
 
-        <div class="card ch flex flex-col flex-1 min-h-[236px]">
+        <div class="card ch flex flex-col min-h-[236px]">
           <p class="st">Vendas por produto</p>
           <div class="flex-1 min-h-[180px] cv-wrap" style="position:relative;"><canvas id="cprod"></canvas></div>
         </div>
